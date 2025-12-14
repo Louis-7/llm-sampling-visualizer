@@ -15,11 +15,18 @@ A React-based interactive visualization tool for exploring LLM temperature, top-
   - Top-p (nucleus) sampling (keep tokens until cumulative probability ≥ p)
 - 📝 **Multiple Examples** - Math, Poetry, and Open-ended prompts with realistic token distributions
 
+## Built On
+
+This project is built on top of the original concept here:
+
+https://claude.ai/public/artifacts/ee75d9e2-3131-49a3-8a65-a1ac9c66a031
+
+Credit to the original author for the inspiration and base ideas.
+
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ and npm
 
 ### Installation
 
