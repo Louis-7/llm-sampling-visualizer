@@ -49,8 +49,8 @@ const EXAMPLES = {
 };
 
 export default function LLMTemperatureDemo() {
-  const [temperature, setTemperature] = useState(0.5);
-  const [topP, setTopP] = useState(0.9);
+  const [temperature, setTemperature] = useState(1.0);
+  const [topP, setTopP] = useState(1.0);
   const [topK, setTopK] = useState(10);
   const [example, setExample] = useState("math");
   const [viewMode, setViewMode] = useState("grid");
