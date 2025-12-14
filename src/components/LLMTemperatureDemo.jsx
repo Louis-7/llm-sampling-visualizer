@@ -92,7 +92,28 @@ export default function LLMTemperatureDemo() {
 
   return (
     <div className="p-6 space-y-6 max-w-4xl mx-auto bg-white min-h-screen">
-      <h1 className="text-2xl font-bold text-gray-900">LLM Temperature & Sampling Visualizer</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-gray-900">LLM Temperature & Sampling Visualizer</h1>
+        <a
+          href="https://github.com/Louis-7/llm-sampling-visualizer"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open GitHub repository"
+          className="text-gray-500 hover:text-gray-900 transition-colors"
+          title="GitHub repository"
+        >
+          {/* GitHub icon (Octocat) */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+            className="w-6 h-6"
+          >
+            <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.61-3.37-1.2-3.37-1.2-.46-1.21-1.12-1.53-1.12-1.53-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.37 1.12 2.95.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05.8-.23 1.66-.35 2.51-.36.85.01 1.71.13 2.51.36 1.9-1.32 2.75-1.05 2.75-1.05.55 1.43.2 2.49.1 2.75.64.71 1.03 1.62 1.03 2.73 0 3.92-2.35 4.77-4.58 5.03.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/>
+          </svg>
+        </a>
+      </div>
 
       {/* Example Tabs */}
       <div className="space-y-2">
