@@ -248,18 +248,11 @@ export default function LLMTemperatureDemo() {
         {/* Line Plot View - X-Axis Probability Distribution */}
         {viewMode === "line" && (
           <div className="relative bg-gray-50 rounded-lg p-6">
-            <div className="mb-8">
+            <div className="mb-12">
               <div className="text-xs text-gray-500 mb-2">Probability Distribution (0% - 100%)</div>
               
-              {/* Main axis line */}
-              <div className="relative h-12 bg-white border-t-2 border-b-2 border-gray-300 rounded overflow-hidden">
-                {/* Percentage markers */}
-                <div className="absolute w-full flex justify-between text-xs text-gray-500 -bottom-6">
-                  {[0, 25, 50, 75, 100].map((pct) => (
-                    <span key={pct}>{pct}%</span>
-                  ))}
-                </div>
-                
+              {/* Main bar plot */}
+              <div className="relative h-12 bg-white border border-gray-300 rounded">
                 {/* Token markers on the axis */}
                 {(() => {
                   let cumulative = 0;
@@ -288,6 +281,45 @@ export default function LLMTemperatureDemo() {
                     );
                   });
                 })()}
+              </div>
+              
+              {/* Ruler below the bar plot */}
+              <div className="relative mt-2 h-6">
+                {/* Ruler base line */}
+                <div className="absolute w-full h-px bg-gray-300 top-0"></div>
+                
+                {/* Major tick marks at 10% intervals */}
+                {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((pct) => (
+                  <div
+                    key={pct}
+                    className="absolute"
+                    style={{ left: `${pct}%`, top: 0 }}
+                  >
+                    {/* Tick mark */}
+                    <div className="absolute w-px h-3 bg-gray-400" style={{ left: 0 }}></div>
+                    
+                    {/* Percentage label */}
+                    <div className="absolute text-xs text-gray-500" style={{
+                      top: '14px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      whiteSpace: 'nowrap'
+                    }}>
+                      {pct}%
+                    </div>
+                  </div>
+                ))}
+                
+                {/* Minor tick marks at 5% intervals */}
+                {[5, 15, 25, 35, 45, 55, 65, 75, 85, 95].map((pct) => (
+                  <div
+                    key={`minor-${pct}`}
+                    className="absolute"
+                    style={{ left: `${pct}%`, top: 0 }}
+                  >
+                    <div className="absolute w-px h-2 bg-gray-300" style={{ left: 0 }}></div>
+                  </div>
+                ))}
               </div>
             </div>
             
